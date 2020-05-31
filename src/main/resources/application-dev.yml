@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    active: dev
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.solr.SolrAutoConfiguration
+      - org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration
+      - org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration
+      - org.springframework.boot.autoconfigure.data.solr.SolrRepositoriesAutoConfiguration
+      - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+  application:
+    channel-count: 4
+    imagefolder_path: "C:/test/imageParser/image/"
+    video_storage_path: "C:/test/imageParser/video/"
+    demander: "/taker/demander"
+    taker_wakeup: "/taker/get-successor-wake-up"
+  datasource:
+    url: jdbc:postgresql://localhost:5433/postgres
+    username: postgres
+    password: 1234
+    driver-class-name: org.postgresql.Driver
+server:
+  port: 8080
